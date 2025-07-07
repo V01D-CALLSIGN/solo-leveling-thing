@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-900 text-white">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome — Solo Leveling IRL</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .typewriter {
+      display: inline-block;
+      border-right: 2px solid #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-black to-gray-900 text-center p-6">
+
+  <img src="assets/sprites/knight-assistant.gif" class="w-24 h-24 mb-6 animate-bounce" />
+
+  <h1 class="text-2xl sm:text-3xl font-bold text-blue-400 mb-4">🛡️ Welcome, Challenger</h1>
+
+  <p id="line1" class="text-gray-300 max-w-md mb-2 typewriter"></p>
+  <p id="line2" class="text-gray-300 max-w-md mb-2 typewriter hidden"></p>
+  <p id="line3" class="text-gray-300 max-w-md mb-6 typewriter hidden"></p>
+
+  <button id="begin-btn" onclick="begin()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded text-lg hidden">
+    🎮 Begin Your Journey
+  </button>
+
+  <script>
+    const lines = [
+      "This is Solo Leveling IRL.",
+      "A game where your real life becomes the quest.",
+      "Grow stronger. Track progress. Defeat your goals."
+    ];
+
+    function typeLine(id, text, delay) {
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        el.textContent = text;
+        el.classList.remove('hidden');
+      }, delay);
+    }
+
+    typeLine("line1", lines[0], 100);
+    typeLine("line2", lines[1], 3500);
+    typeLine("line3", lines[2], 7000);
+
+    setTimeout(() => {
+      document.getElementById("begin-btn").classList.remove("hidden");
+    }, 10000);
+
+    function begin() {
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>
