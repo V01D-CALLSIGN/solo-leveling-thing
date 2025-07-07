@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-900 text-white">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Level Up!</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes pulse-glow {
+      0%, 100% { text-shadow: 0 0 10px #0ff; }
+      50% { text-shadow: 0 0 20px #0ff; }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 to-black min-h-screen flex flex-col justify-center items-center text-center p-10">
+
+  <img src="assets/sprites/knight-assistant.gif" class="w-24 h-24 mb-4 animate-bounce" />
+  <h1 class="text-4xl text-blue-400 font-bold animate-pulse" style="animation: pulse-glow 1.5s infinite">
+    ⚔️ LEVEL UP!
+  </h1>
+  <p class="text-lg mt-4 text-gray-300" id="quote"></p>
+  <button onclick="continueGame()" class="mt-6 px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded">
+    🔁 Return to Dashboard
+  </button>
+
+  <script>
+    const quotes = [
+      "Only cowards procrastinate, Champion.",
+      "You forged strength from struggle.",
+      "Another tier ascended. The grind never ends.",
+      "You are not the same as yesterday.",
+    ];
+    document.getElementById('quote').textContent = quotes[Math.floor(Math.random() * quotes.length)];
+
+    function continueGame() {
+      window.location.href = "dashboard.html";
+    }
+  </script>
+</body>
+</html>

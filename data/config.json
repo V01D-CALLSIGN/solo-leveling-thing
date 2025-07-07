@@ -1,0 +1,22 @@
+{
+  "gear": [
+    {
+      "name": "Sword of Focus",
+      "type": "weapon",
+      "stat": "Focus",
+      "unlockAt": 3
+    },
+    {
+      "name": "Notebook of Mindfire",
+      "type": "tool",
+      "stat": "Creativity",
+      "unlockAt": 5
+    },
+    {
+      "name": "Boots of Momentum",
+      "type": "armor",
+      "stat": "Strength",
+      "unlockAt": 4
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-900 text-white">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solo Leveling IRL — Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-mono bg-gradient-to-br from-gray-900 to-blue-950 min-h-screen p-6">
+
+  <div class="flex flex-col gap-6 max-w-5xl mx-auto">
+    <!-- CHARACTER PANEL -->
+    <section id="character-panel" class="bg-gray-800/70 p-4 rounded-lg shadow border border-blue-600 flex items-center justify-between">
+      <div>
+        <h2 class="text-2xl font-bold text-blue-300" id="char-name"></h2>
+        <p class="text-sm text-gray-300" id="char-title"></p>
+        <p class="mt-2 text-green-400">Level <span id="level">1</span> — <span id="xp">0</span> XP</p>
+      </div>
+      <img src="assets/sprites/knight-assistant.gif" alt="Knight" class="w-20 h-20 rounded" />
+    </section>
+
+    <!-- XP BAR -->
+    <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden">
+      <div id="xp-bar" class="h-full bg-blue-500 transition-all duration-500" style="width: 0%"></div>
+    </div>
+
+    <!-- STAT PANEL -->
+    <section id="stats" class="bg-gray-800/60 p-4 rounded-lg shadow grid grid-cols-3 gap-4 text-center">
+      <!-- Filled dynamically -->
+    </section>
+
+    <!-- QUEST BOARD -->
+    <section class="bg-gray-900/70 p-4 rounded-lg shadow border border-gray-700">
+      <h3 class="text-xl font-bold mb-4 text-blue-200">📜 Daily Quests</h3>
+      <div id="quest-list" class="space-y-2"></div>
+      <button onclick="generateQuests()" class="mt-4 w-full bg-indigo-600 hover:bg-indigo-700 p-2 rounded">🧠 Suggest Quests</button>
+    </section>
+
+    <!-- BOSS BOARD -->
+    <section class="bg-gray-900/70 p-4 rounded-lg shadow border border-red-700">
+      <h3 class="text-xl font-bold mb-4 text-red-400">🐉 Boss Fights</h3>
+      <div id="boss-list" class="space-y-2"></div>
+      <button onclick="addBoss()" class="mt-4 w-full bg-red-600 hover:bg-red-700 p-2 rounded">➕ Add Boss Fight</button>
+    </section>
+  </div>
+
+  <!-- KNIGHT FLOATING ASSISTANT -->
+  <div class="fixed bottom-4 right-4">
+    <button id="assistant-btn" class="relative group">
+      <img src="assets/sprites/knight-assistant.gif" class="w-16 h-16" />
+      <div class="absolute -top-10 right-0 bg-gray-800 text-sm p-2 rounded hidden group-hover:block">Click me!</div>
+    </button>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="js/ui.js"></script>
+  <script src="js/xp.js"></script>
+  <script src="js/quests.js"></script>
+  <script src="js/assistant.js"></script>
+</body>
+</html>
