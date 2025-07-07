@@ -34,4 +34,16 @@ document.getElementById('assistant-btn').addEventListener('click', () => {
     if (!log) return;
     alert(`📝 Knight says: "From your words, I sense strength building. Stay sharp."`);
   }
+  // Knight jumps randomly around the screen every few seconds
+setInterval(() => {
+  const wrapper = document.getElementById('knight-wrapper');
+  if (!wrapper) return;
+
+  const x = Math.floor(Math.random() * 80); // % from right
+  const y = Math.floor(Math.random() * 80); // % from bottom
+
+  wrapper.style.right = `${x}%`;
+  wrapper.style.bottom = `${y}%`;
+}, 4000); // every 4 seconds
+
 });
